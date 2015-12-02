@@ -4,3 +4,6 @@
 [submodule "bitlbee"]
 	path = bitlbee
 	url = https://github.com/bitlbee/bitlbee
+[submodule "checkinstall"]
+	path = checkinstall
+	url = http://asic-linux.com.mx/~izto/checkinstall/checkinstall.git/

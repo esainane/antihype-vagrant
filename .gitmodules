@@ -1,0 +1,6 @@
+[submodule "quassel"]
+	path = quassel
+	url = https://github.com/esainane/quassel
+[submodule "bitlbee"]
+	path = bitlbee
+	url = https://github.com/bitlbee/bitlbee

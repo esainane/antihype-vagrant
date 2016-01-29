@@ -10,3 +10,6 @@
 [submodule "libbrine"]
 	path = libbrine
 	url = https://github.com/esainane/libbrine
+[submodule "bento"]
+	path = bento
+	url = https://github.com/chef/bento

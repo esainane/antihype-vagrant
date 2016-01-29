@@ -39,6 +39,9 @@ make;
 checkinstall -R -y --pkgname='libbrine' --pkgversion=$(git describe --long --dirty | sed 's/-/_/g') make install PREFIX=/usr;
 cp /root/rpmbuild/RPMS/x86_64/libbrine-*.rpm /vagrant/rpmbuild/RPMS/x86_64/;
 
+# Quassel depends on libbrine to Build
+
+yum install -y /vagrant/rpmbuild/RPMS/x86_64/libbrine-*.rpm ||:;
 
 #
 # Build and package Quassel

@@ -3,3 +3,4 @@ checkinstall/checkinstall
 checkinstall/doc-pak
 checkinstall/installwatch
 checkinstall/locale/*.mo
+rpmbuild/

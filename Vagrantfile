@@ -23,7 +23,11 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     v.gui = true
   end
 
-  config.vm.provision 'shell', path: 'build.bash'
+  config.vm.define 'buildbox' do |nvm|
+    nvm.vm.hostname = 'buildbox'
+    nvm.vm.network :private_network, ip: next_ip
+    nvm.vm.provision 'shell', path: 'build.bash'
+  end
 
   config.vm.define 'core' do |nvm|
     nvm.vm.hostname = 'core'

@@ -7,3 +7,6 @@
 [submodule "checkinstall"]
 	path = checkinstall
 	url = http://asic-linux.com.mx/~izto/checkinstall/checkinstall.git/
+[submodule "libbrine"]
+	path = libbrine
+	url = https://github.com/esainane/libbrine

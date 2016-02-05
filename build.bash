@@ -41,7 +41,7 @@ cp /root/rpmbuild/RPMS/x86_64/libbrine-*.rpm /vagrant/rpmbuild/RPMS/x86_64/;
 
 # Quassel depends on libbrine to Build
 
-yum install -y /vagrant/rpmbuild/RPMS/x86_64/libbrine-*.rpm ||:;
+yum install -y /vagrant/rpmbuild/RPMS/x86_64/libbrine-*.rpm;
 
 #
 # Build and package Quassel

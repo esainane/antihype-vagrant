@@ -9,6 +9,14 @@ def next_ip
   return ($nip = $nip.succ).to_s
 end
 
+def define(config, name)
+  i = next_ip
+  config.vm.define name do |nvm|
+    nvm.vm.hostname = name
+    nvm.vm.network :private_network, ip: i
+  end
+end
+
 VAGRANTFILE_API_VERSION = "2"
 
 Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
@@ -23,23 +31,9 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     v.gui = true
   end
 
-  config.vm.define 'buildbox' do |nvm|
-    nvm.vm.hostname = 'buildbox'
-    nvm.vm.network :private_network, ip: next_ip
-    nvm.vm.provision 'shell', path: 'build.bash'
-  end
+  define config, 'buildbox'
 
-  config.vm.define 'core' do |nvm|
-    nvm.vm.hostname = 'core'
-    nvm.vm.network :private_network, ip: next_ip
-    nvm.vm.provision 'shell', path: 'core.bash'
-  end
+  define config, 'core'
 
-  config.vm.define 'skc' do |nvm|
-    nvm.vm.hostname = 'skc'
-    nvm.vm.network :public_network, ip: next_ip
-    nvm.vm.network :private_network
-
-    nvm.vm.provision 'shell', path: 'skc.bash'
-  end
+  define config, 'skc'
 end
